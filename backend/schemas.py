@@ -15,6 +15,7 @@ class User(_UserBase):
     
     class Config():
         orm_mode = True
+        from_attributes = True
 
 class _LeadBase(_pydantic.BaseModel):
     first_name: str
@@ -30,7 +31,7 @@ class Lead(_LeadBase):
     id: int 
     owner_id: int
     date_created: _dt.datetime
-    date_last_updted = _dt.datetime
+    date_last_updted : _dt.datetime
 
     class Config:
         orm_mode = True
